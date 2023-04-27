@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>계좌번호 복사하기</title>
+  </head>
+  <body>
+    <p>계좌번호: 1234-5678-9012-3456</p>
+    <button onclick="copyToClipboard(1002440087145)">우리은행 계좌번호 복사하기</button>
+    
+    <script>
+      function copyToClipboard(text) {
+        // 텍스트를 담을 임시 태그를 생성합니다.
+        var tempInput = document.createElement("input");
+        tempInput.value = text;
+        document.body.appendChild(tempInput);
+
+        // 텍스트를 선택하고 복사합니다.
+        tempInput.select();
+        document.execCommand("copy");
+
+        // 임시 태그를 제거합니다.
+        document.body.removeChild(tempInput);
+      }
+    </script>
+  </body>
+</html>
